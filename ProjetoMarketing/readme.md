@@ -1,7 +1,8 @@
 
-# Projeto Marketing com LLMs e IA Generativa
+> 🇧🇷 **Versão em Português**  
+> 🇺🇸 **English version below**
 
-(English version below)
+# Projeto Marketing com LLMs e IA Generativa
 
 ## Descrição
 
