@@ -1,218 +1,94 @@
-
-# Projeto de Atendimento e Suporte com RAG
-
-> 🇧🇷 **Versão em Português**  
+> 🇧🇷 **Versão em Português**
 > 🇺🇸 **English version below**
+>
+> **Nota:** Este projeto foi desenvolvido durante as aulas de um curso sobre **Inteligência Artificial Generativa e Agentes**, com finalidade educacional e de aprendizado prático. O objetivo é aplicar conceitos como LLMs, Retrieval-Augmented Generation (RAG), embeddings, bancos vetoriais e frameworks de IA generativa em um cenário realista de Recursos Humanos.
 
-> **Nota:** Este projeto foi desenvolvido durante as aulas de um curso sobre **Inteligência Artificial Generativa e Agentes**, com finalidade educacional e de aprendizado prático. O objetivo é aplicar conceitos como LLMs, Retrieval-Augmented Generation (RAG), embeddings, bancos vetoriais e frameworks para desenvolvimento de aplicações baseadas em IA Generativa.
+## Versão em Português
+
+# Projeto de Recursos Humanos com LLMs
+
+Este projeto tem como foco a aplicação de Inteligência Artificial Generativa em um cenário prático de Recursos Humanos. A ideia central é explorar como modelos de linguagem grandes (LLMs) podem auxiliar na análise de currículos, extração de informações estruturadas e apoio à tomada de decisão em processos seletivos.
 
 ## Objetivo
 
-Este projeto implementa um chatbot de atendimento e suporte utilizando **Retrieval-Augmented Generation (RAG)**, com foco em responder perguntas com base em documentos reais da empresa, como PDFs, manuais e bases de conhecimento.
+O projeto demonstra, de forma educativa, como combinar técnicas como:
 
-O assistente é capaz de:
+- LLMs para compreensão e resumo de documentos;
+- RAG para recuperar informações relevantes a partir de uma base documental;
+- Embeddings e bancos vetoriais para buscas semânticas;
+- Frameworks de IA generativa para construção de fluxos de processamento.
 
-- Responder dúvidas de clientes e colaboradores;
-- Buscar informações em documentos estruturados;
-- Fornecer respostas mais precisas do que um modelo de linguagem sem contexto;
-- Servir como base para uma interface simples desenvolvida com Streamlit.
+## Contexto do estudo de caso
 
-## Contexto do projeto
+A proposta é trabalhar com documentos de currículos e vagas, extraindo dados importantes como experiência, competências, formação, perfil profissional e adequação ao cargo. O objetivo é transformar documentos textuais em informações organizadas que possam apoiar a triagem e análise de candidatos.
 
-O projeto foi desenvolvido a partir do notebook **"2 - LLMs para empresas e negócios - Atendimento e Suporte.ipynb"**, que demonstra:
+## Conteúdo do projeto
 
-- Uso de modelos de linguagem (LLMs);
-- Carregamento e processamento de documentos PDF;
-- Divisão de texto em chunks;
-- Geração de embeddings;
-- Indexação utilizando FAISS;
-- Recuperação de contexto com LangChain;
-- Geração de respostas fundamentadas nos documentos recuperados.
+- Notebook principal: [3_LLMs_para_empresas_e_negócios_Recursos_Humanos.ipynb](3_LLMs_para_empresas_e_negócios_Recursos_Humanos.ipynb)
+- Pasta com documentos de apoio: [documentos](documentos)
 
-## Tecnologias utilizadas
+## Tecnologias e ferramentas
 
 - Python
 - LangChain
-- LangChain Community
-- LangChain Groq / OpenAI
-- FAISS
-- Sentence Transformers
+- Groq / OpenAI
 - PyMuPDF
-- Streamlit
-- Python Dotenv
+- Docling
+- Embeddings e bancos vetoriais
 
-## Fluxo da aplicação
+## Como usar
 
-1. Carregamento dos documentos PDF;
-2. Extração do conteúdo textual;
-3. Divisão do texto em pequenos blocos (chunks);
-4. Geração dos embeddings;
-5. Armazenamento no banco vetorial FAISS;
-6. Recuperação dos trechos mais relevantes para cada pergunta;
-7. Geração da resposta utilizando o contexto recuperado.
+1. Abra o notebook principal.
+2. Instale as dependências indicadas no ambiente.
+3. Carregue os documentos que deseja analisar.
+4. Execute as células para extrair conteúdo, processar textos e gerar respostas com o modelo.
 
-## Pré-requisitos
+## Observação
 
-- Python 3.9 ou superior
-- Chave de API da Groq ou OpenAI
-- Ambiente virtual (recomendado)
-
-## Instalação
-
-```bash
-pip install -q langchain-core==0.3.1
-pip install -q langchain==0.3.1
-pip install -q langchain-community==0.3.1
-pip install -q langchain-huggingface==0.1.1
-pip install -q faiss-cpu==1.10.0
-pip install -q sentence-transformers==3.1.0
-pip install -q langchain-classic
-pip install -q langchain_groq PyMuPDF
-pip install -q streamlit python-dotenv
-pip install -q numpy==1.26.3
-```
-
-## Configuração
-
-Configure as variáveis de ambiente com suas chaves de API:
-
-```bash
-export GROQ_API_KEY="sua-chave"
-export OPENAI_API_KEY="sua-chave"
-```
-
-Ou utilize um arquivo `.env` na raiz do projeto.
-
-## Como executar
-
-Execute o notebook para testar toda a pipeline RAG.
-
-Para iniciar a interface web com Streamlit:
-
-```bash
-streamlit run app02.py
-```
-
-## Estrutura do projeto
-
-```
-.
-├── documentos/
-├── app02.py
-└── 2 - LLMs para empresas e negócios - Atendimento e Suporte.ipynb
-```
-
-## Observações
-
-- Projeto desenvolvido para fins educacionais e demonstração de uma arquitetura RAG.
-- Em ambientes de produção, recomenda-se adicionar autenticação, monitoramento, tratamento de erros e mecanismos para validação das respostas.
-- A qualidade das respostas depende diretamente da qualidade dos documentos indexados.
+Este repositório foi criado com fins educacionais e serve como material de aprendizagem para explorar aplicações reais de IA generativa em empresas.
 
 ---
 
-# Customer Support Chatbot with RAG
+## English version
 
-> **Note:** This project was developed during a **Generative AI and AI Agents** course as a hands-on educational exercise. Its purpose is to apply concepts such as LLMs, Retrieval-Augmented Generation (RAG), embeddings, vector databases, and modern frameworks for building Generative AI applications.
+# Human Resources Project with LLMs
+
+This project focuses on the practical application of Generative Artificial Intelligence in a Human Resources scenario. The main idea is to explore how Large Language Models (LLMs) can support resume analysis, structured information extraction, and decision support in recruitment processes.
 
 ## Objective
 
-This project implements a customer support chatbot using **Retrieval-Augmented Generation (RAG)** to answer questions based on real company documents such as PDFs, manuals, and knowledge bases.
+The project demonstrates, in an educational way, how to combine techniques such as:
 
-The assistant is designed to:
+- LLMs for document understanding and summarization;
+- RAG to retrieve relevant information from a document base;
+- Embeddings and vector databases for semantic search;
+- Generative AI frameworks for building processing pipelines.
 
-- Answer questions from customers and employees;
-- Retrieve information from structured documents;
-- Provide more accurate responses than a standalone language model;
-- Serve as the backend for a simple Streamlit interface.
+## Study case context
 
-## Project Background
+The proposal is to work with resumes and job descriptions, extracting important information such as experience, skills, education, professional profile, and suitability for the role. The goal is to transform textual documents into organized information that can support candidate screening and analysis.
 
-The project was built from the notebook **"2 - LLMs for Business - Customer Support.ipynb"**, demonstrating:
+## Project contents
 
-- Large Language Models (LLMs);
-- PDF loading and processing;
-- Text chunking;
-- Embedding generation;
-- FAISS vector indexing;
-- Context retrieval using LangChain;
-- Context-aware response generation.
+- Main notebook: [3_LLMs_para_empresas_e_negócios_Recursos_Humanos.ipynb](3_LLMs_para_empresas_e_negócios_Recursos_Humanos.ipynb)
+- Supporting documents folder: [documentos](documentos)
 
-## Technologies
+## Technologies and tools
 
 - Python
 - LangChain
-- LangChain Community
-- LangChain Groq / OpenAI
-- FAISS
-- Sentence Transformers
+- Groq / OpenAI
 - PyMuPDF
-- Streamlit
-- Python Dotenv
+- Docling
+- Embeddings and vector databases
 
-## Application Workflow
+## How to use
 
-1. Load PDF documents;
-2. Extract document text;
-3. Split the content into chunks;
-4. Generate embeddings;
-5. Store embeddings in a FAISS vector database;
-6. Retrieve the most relevant chunks;
-7. Generate a final answer using the retrieved context.
+1. Open the main notebook.
+2. Install the dependencies shown in the environment.
+3. Load the documents you want to analyze.
+4. Run the cells to extract content, process the text, and generate responses with the model.
 
-## Requirements
+## Note
 
-- Python 3.9+
-- Groq or OpenAI API Key
-- Virtual environment (recommended)
-
-## Installation
-
-```bash
-pip install -q langchain-core==0.3.1
-pip install -q langchain==0.3.1
-pip install -q langchain-community==0.3.1
-pip install -q langchain-huggingface==0.1.1
-pip install -q faiss-cpu==1.10.0
-pip install -q sentence-transformers==3.1.0
-pip install -q langchain-classic
-pip install -q langchain_groq PyMuPDF
-pip install -q streamlit python-dotenv
-pip install -q numpy==1.26.3
-```
-
-## Configuration
-
-Set your API keys as environment variables:
-
-```bash
-export GROQ_API_KEY="your-key"
-export OPENAI_API_KEY="your-key"
-```
-
-Alternatively, use a `.env` file.
-
-## Running the Project
-
-Run the notebook to test the complete RAG pipeline.
-
-To start the Streamlit interface:
-
-```bash
-streamlit run app02.py
-```
-
-## Project Structure
-
-```
-.
-├── documentos/
-├── app02.py
-└── 2 - LLMs para empresas e negócios - Atendimento e Suporte.ipynb
-```
-
-## Notes
-
-- This is an educational implementation intended to demonstrate a RAG architecture.
-- Production deployments should include authentication, monitoring, error handling, and response validation.
-- Response quality depends heavily on the quality of the indexed documents.
-
+This repository was created for educational purposes and serves as a learning resource for exploring real-world applications of generative AI in companies.
